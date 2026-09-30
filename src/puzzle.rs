@@ -25,6 +25,9 @@ pub struct Puzzle {
 pub enum Quality {
     Escaped {
         leaks: usize,
+        // for incomplete solutions
+        bees: usize,
+        fruits: usize,
     },
 
     Enclosed {
@@ -34,8 +37,23 @@ pub enum Quality {
     },
 }
 
+use std::collections::VecDeque;
 impl Puzzle {
     pub fn eval_solution() -> Quality {
+        todo!()
+    }
+
+    pub fn leaks(&self, s: Solution) -> usize {
+        let mut queue = VecDeque<_>::new();
+        for (i, j) in self.borders() {
+            queue.push_back((i, j));
+            
+        }
+
+        todo!()
+    }
+
+    fn borders(&self) -> Vec<(usize, usize)> {
         todo!()
     }
 }
